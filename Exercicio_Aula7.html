@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Principal</title>
+</head>
+<body>
+   <h1>Formulário Principal</h1>
+   <form method="post">
+        Nome :<br>
+        <input type="text" id="nome" size="30" maxlength="30" autofocus>
+        <br>
+        Email:<br>
+        <input type="text" id="email" size="50" maxlength="50" >
+        <br>
+        Comentário:
+        <br>    
+        <textarea id="comentario" rows="5" cols="30"></textarea>
+        <br>
+        <br>
+        <h3>Pesquisa:</h3>
+        
+        <span>Primeira vez nesta página??</span>
+            <input type='radio' name='escolha' id="opcao" value='sim'>Sim
+            <input type='radio' name='escolha' id="opcao" value='nao'>Não
+           
+        <br>
+        <input TYPE="reset" value="Limpar">
+        <input TYPE="button" value="Gravar" onclick="validar()">
+        
+    </form>
+   
+</body>
+</html>
+<script>
+        function validar() {
+            
+            var nome = document.getElementById('nome').value; 
+            var Email = document.getElementById('email').value;
+            var comentario = document.getElementById('comentario').value;
+            var resp = document.getElementById("opcao").checked;
+            var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+            console.log(resp);
+        
+            if(nome.length < 10){
+                alert("O nome precisa ter mais de 10 caracteres!!!");
+            }
+            if(comentario.length < 20){
+                alert("Comentário precisa ter mais de 20 caracteres!!!");
+            }
+            if (reg.test(Email)){
+                
+            }
+            else{
+                alert("Estrutura do email errada !!!")
+            }
+            if(resp == false){
+                 alert("Que bom que você voltou a visitar esta página!");
+            }
+            else{
+                alert("Volte sempre a está página!");
+            }
+            
+    }   
+</script>
